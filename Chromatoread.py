@@ -8,7 +8,7 @@ import FileSystemOps as io
 #Declared variables
 main_loop = True
 system_msg = ""
-loaded_file = False
+loaded_df = ""
 
 #Program start point
 
@@ -21,16 +21,20 @@ while(main_loop):
 
     if(user_menu_input == "1"):
         print("Loading an excel file.\n")
-        system_msg = io.load_excel_file()
+        system_msg, loaded_df = io.load_excel_file()
+
     elif (user_menu_input == "2"):
         print("Loading a csv or text file.\n")
-        system_msg = io.load_text_file()
+        system_msg, loaded_df = io.load_text_file()
+
     elif (user_menu_input == "3"):
         print("Changing directory.\n")
         system_msg = io.change_directory()
+
     elif (user_menu_input == "4"):
         print("Closing the program.\n")
         main_loop = False
+
     else:
         system_msg = "Error. Input not recognized.\n"
 
