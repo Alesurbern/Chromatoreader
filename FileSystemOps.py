@@ -34,9 +34,9 @@ def load_excel_file():
     try:
         df = pd.read_excel(excel_file_name)
     except FileNotFoundError:
-        return ("This file doesn't exist or there is an error with the name.\n", "")
+        return ("This file doesn't exist or there is an error with the name.\n", "", False)
 
-    return ("", df)
+    return ("", df, True)
 
 def load_text_file():
     """Open the text file written by the user."""
@@ -49,6 +49,6 @@ def load_text_file():
     try:
         df = pd.read_csv(excel_file_name, sep="\t")
     except FileNotFoundError:
-        return ("This file doesn't exist or there is an error with the name.\n", "")
+        return ("This file doesn't exist or there is an error with the name.\n", "", False)
 
-    return ("", df)
+    return ("", df, True)
