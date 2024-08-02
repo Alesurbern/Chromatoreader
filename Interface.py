@@ -3,6 +3,7 @@ import FileSystemOps as io
 def banner():
     """Print the title of the program"""
 
+    print("")
     print("CHROMATOGRAM READER")
     print("===================")
     print()
@@ -26,6 +27,7 @@ def decision_menu():
     """Control flow for the menu"""
 
     system_msg = ""
+    name_loaded_df = ""
     loaded_df = ""
     is_df_loaded = False
     main_loop = True
@@ -38,7 +40,7 @@ def decision_menu():
 
     elif (user_menu_input == "2"):
         print("Loading a csv or text file.\n")
-        system_msg, loaded_df, is_df_loaded = io.load_text_file()
+        system_msg, name_loaded_df, loaded_df, is_df_loaded = io.load_text_file()
 
     elif (user_menu_input == "3"):
         print("Changing directory.\n")
@@ -51,9 +53,9 @@ def decision_menu():
     else:
         system_msg = "Error. Input not recognized.\n"
 
-    return (system_msg, loaded_df, is_df_loaded, main_loop)
+    return (system_msg, name_loaded_df, loaded_df, is_df_loaded, main_loop)
 
-def menu_loaded_df(sysmsg, result_df):
+def menu_loaded_df(sysmsg, result_df, name_df):
     """Print the menu when the df is loaded"""
 
     banner()
@@ -61,12 +63,17 @@ def menu_loaded_df(sysmsg, result_df):
     if sysmsg != "":
         print("System message: " + sysmsg)
         
+    print("File: ", name_df)
+    print("")
     print(result_df)
+    print("")
 
+    print("----------------------------------------")
     print("1. Print the data frame.")
     print("2. Print first rows of the data frame.")
     print("3. Print last rows of the data frame.")
-    print("4. Go back.")
+    print("4. Print the name of the columns.")
+    print("5. Go back.")
     print()
 
 def decision_menu_loaded_df(df):
@@ -91,6 +98,10 @@ def decision_menu_loaded_df(df):
         result_df = df.tail()
 
     elif (user_menu_input == "4"):
+        print("Print the name of the columns.\n")
+        result_df = df.columns
+
+    elif (user_menu_input == "5"):
         print("Go back.\n")
         is_df_loaded = False
 

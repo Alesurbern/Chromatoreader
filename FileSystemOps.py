@@ -6,8 +6,8 @@ def change_directory():
         changes to the new one."""
     os.system("cls")
     
-    print("Current working directory.")
-    print(os.getcwd())
+    print("Current working directory.\n")
+    print(">> ", os.getcwd())
     print()
     print("Introduce another directory or absolute path.\n")
     user_path = input("New directory: ")
@@ -44,11 +44,12 @@ def load_text_file():
     os.system("cls")
 
     print("Write the name of the text file.")
-    excel_file_name = input("Text file name: ")
+    text_file_name = input("Text file name: ")
 
     try:
-        df = pd.read_csv(excel_file_name, sep="\t")
+        #df = pd.read_csv(excel_file_name, sep="\t")
+        df = pd.read_csv(text_file_name)
     except FileNotFoundError:
-        return ("This file doesn't exist or there is an error with the name.\n", "", False)
+        return ("This file doesn't exist or there is an error with the name.\n", "", "", False)
 
-    return ("", df, True)
+    return ("", text_file_name, df, True)
