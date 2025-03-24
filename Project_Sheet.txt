@@ -1,15 +1,23 @@
+Chromatoread project roadmap
+
+Current version 0.1
+----------------------------
++ Terminal menu.
++ Import of files.
++ Read of .csv files.
++ Display of file data.
+
+
+
 Future implementations
+----------------------------
+- Recently opened files.
+- Store the path of the directory and the name of the file.
+- List the recent file names to select.
+- Check how to write into files, read files.
+- Create a vector to load in memory last paths used.
+- In text files, ask the user for the separator to use for loading the data.
+- When a file is succesfully read and the dataframe is stored in memory, change the meny displayed.
+	At the moment, the idea is one dataframe open per file name indicated.
+- Save option to avoid loosing the progress.
 
-    Recently opened files. Store the path of the directory
-and the name of the file. List the recent file names
-to select. Check how to write into files, read files. Create a
-vector to load in memory last paths used.
-
-    In text files, ask the user for the separator to use for 
-loading the data.
-
-    When a file is sucesfully read and the dataframe is stored 
-in memory, change the menu displayed. At the moment the idea is
-one dataframe open per file name indicated.
-
-    Save option to avoid loosing the progress.
