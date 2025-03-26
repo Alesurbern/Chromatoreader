@@ -8,14 +8,20 @@ def banner():
     print("===================")
     print()
     
+def printStatus(sysmsg):
+    """Print system messages"""
+    
+    if sysmsg != "":
+        print("System message: " + sysmsg)
+
+
 def menu(sysmsg):
     """Print the first menu and the message 
         to the user"""
 
     banner()
 
-    if sysmsg != "":
-        print("System message: " + sysmsg)
+    printStatus(sysmsg)
         
     print("1. Load an excel file")
     print("2. Load a csv or text file")

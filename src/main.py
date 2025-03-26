@@ -16,8 +16,8 @@ result_df = ""
 #Program start point
 
 while(main_loop):
-    os.system("cls")
-    
+    io.clearScreen()
+ 
     if is_df_loaded == False:
         iface.menu(system_msg)
         system_msg, name_loaded_df, loaded_df, is_df_loaded, main_loop = iface.decision_menu()

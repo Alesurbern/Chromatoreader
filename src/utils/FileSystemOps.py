@@ -1,10 +1,19 @@
 import os
+import platform
 import pandas as pd
+
+def clearScreen():
+    so_name = platform.system()
+    if so_name == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
+
 
 def change_directory():
     """Ask to the user for a new directory and 
         changes to the new one."""
-    os.system("cls")
+    clearScreen()
     
     print("Current working directory.\n")
     print(">> ", os.getcwd())
@@ -26,7 +35,7 @@ def change_directory():
 def load_excel_file():
     """Open the excel file written by the user."""
 
-    os.system("cls")
+    clearScreen()
 
     print("Write the name of the Excel file.")
     excel_file_name = input("Excel file name: ")
@@ -40,8 +49,8 @@ def load_excel_file():
 
 def load_text_file():
     """Open the text file written by the user."""
-
-    os.system("cls")
+    
+    clearScreen()
 
     print("Write the name of the text file.")
     text_file_name = input("Text file name: ")
